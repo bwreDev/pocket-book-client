@@ -55,6 +55,18 @@ export default class Navbar extends Component {
           <li>
             <Link to='/'>Home</Link>
           </li>
+          <li>
+            <Link to='/login'>Login</Link>
+          </li>
+          <li>
+            <Link to='/register'>Register</Link>
+          </li>
+          <li>
+            <Link to='/user'>Profile</Link>
+          </li>
+          <li>
+            <Link to='/input'>Input</Link>
+          </li>
           {/*
           TokenService.hasAuthToken()
             ? this.renderLogoutLink()
