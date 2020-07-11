@@ -15,6 +15,11 @@ export default class LandingPage extends Component {
             expenditures.
           </h3>
         </header>
+        <section className='demo-login'>
+          <p>Test out the site with our demo account!</p>
+          <p>Username: demo</p>
+          <p>Password: Demo123!</p>
+        </section>
       </>
     );
   }

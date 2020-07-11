@@ -1,20 +1,19 @@
 import React, { Component } from 'react';
-//import AuthApiService from '../../services/auth-api-service';
+import AuthApiService from '../../services/auth-api-service';
 import Navbar from '../../components/Navbar/Navbar';
 import './LoginForm.css';
 
 export default class LoginForm extends Component {
-  /*
   static defaultProps = {
     onLoginSuccess: () => {},
   };
 
   state = { error: null };
 
-  handleSubmitJwtAuth = (event) => {
-    event.preventDefault();
+  handleSubmitJwtAuth = (input) => {
+    input.prinputDefault();
     this.setState({ error: null });
-    const { username, password } = event.target;
+    const { username, password } = input.target;
 
     AuthApiService.postLogin({
       username: username.value,
@@ -30,12 +29,10 @@ export default class LoginForm extends Component {
         this.setState({ error: res.error });
       });
   };
-  */
 
   render() {
-    {
-      /*const { error } = this.state;*/
-    }
+    const { error } = this.state;
+
     return (
       <>
         <Navbar />
@@ -44,7 +41,7 @@ export default class LoginForm extends Component {
           onSubmit={this.handleSubmitJwtAuth}
         >
           <div role='alert'>
-            {/*error && <p className='red'>{error}</p>*/}
+            {error && <p className='red'>{error}</p>}
           </div>
           <fieldset>
             <h3>Login</h3>

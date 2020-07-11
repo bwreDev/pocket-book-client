@@ -1,60 +1,51 @@
 import React, { Component } from 'react';
-//import EventsContext from '../../contexts/EventsContext';
-//import BabyBookApiService from '../../services/baby-book-api-service';
+import InputsContext from '../../contexts/InputsContext';
+import PocketBookApiService from '../../services/pocket-book-api-service';
 import Navbar from '../../components/Navbar/Navbar';
-//import moment from 'moment';
 import './InputForm.css';
 
 export default class InputForm extends Component {
-  /*
-  static contextType = EventsContext;
+  static contextType = InputsContext;
 
   state = {
-    event_type: null,
+    input_type: null,
   };
 
-  onChange = (event) => {
+  onChange = (input) => {
     this.setState({
-      event_type: event.target.value,
+      input_type: input.target.value,
     });
   };
 
-  handleSubmit = (event) => {
-    event.preventDefault();
+  handleSubmit = (input) => {
+    input.preventDefault();
 
-    let eventObject = {
-      title: this.state.event_type,
+    let inputObject = {
+      title: this.state.input_type,
     };
 
-    if (eventObject.title === 'diaper_changes') {
-      eventObject.content = event.target.diaper_changes.value;
-    }
-    if (eventObject.title === 'feedings') {
-      eventObject.content =
-        event.target.feedings.value +
+    if (inputObject.title === 'income') {
+      inputObject.content =
+        input.target.income.value +
         ' ' +
-        event.target.feeding_amount.value +
+        input.target.amount.value +
         ' ' +
-        event.target.measurement.value;
+        input.target.description.value;
     }
-    if (eventObject.title === 'appointments') {
-      eventObject.content =
-        event.target.appointments.value +
-        ' on - ' +
-        moment(event.target.appointments_date.value).format(
-          'MMM Do YY'
-        );
-    }
-    if (eventObject.title === 'stretches') {
-      eventObject.content = event.target.stretches.value;
+    if (inputObject.title === 'debt') {
+      inputObject.content =
+        input.target.debt.value +
+        ' ' +
+        input.target.amount.value +
+        ' ' +
+        input.target.description.value;
     }
 
-    BabyBookApiService.postEvent(eventObject)
-      .then(this.context.addEvent)
+    PocketBookApiService.postInput(inputObject)
+      .then(this.context.addInput)
       .then(this.props.history.push('/user'))
       .catch(this.context.setError);
   };
-  */
 
   render() {
     return (
@@ -62,47 +53,25 @@ export default class InputForm extends Component {
         <Navbar />
         <h2>Please select income or debt.</h2>
         <form className='input-form' onSubmit={this.handleSubmit}>
-          <h3>Input type</h3>
+          <h3>Type</h3>
           <select onChange={this.onChange} name='input_type'>
             <option value=''></option>
             <option value='incomes'>Incomes</option>
             <option value='debts'>Debts</option>
           </select>
-          {/*this.state.input_type === 'incomes' ? (
-            <fieldset className='incomes'>
-              <label htmlFor='incomes'>
-                <h3>Income</h3>
-              </label>
-              <input placeholder='$0' type='number' name='incomes' />
-            </fieldset>
-          ) : null}
-          {this.state.input_type === 'debts' ? (
-            <fieldset className='debts'>
-              <label htmlFor='debts'>
-                <h3>Debts</h3>
-              </label>
-              <h4>Type</h4>
-              <input placeholder='$0' type='number' name='debts' />
-            </fieldset>
-          ) : null */}
-          <fieldset className='incomes'>
-            <label htmlFor='incomes'>
-              <h3>Income</h3>
+          <fieldset className='amount'>
+            <label htmlFor='amount'>
+              <h3>Amount</h3>
             </label>
-            <input placeholder='$0' type='number' name='incomes' />
-            <textarea
-              placeholder='Type of income'
-              name='incomes'
-            ></textarea>
+            <input placeholder='$0' type='number' name='amount' />
           </fieldset>
-          <fieldset className='debts'>
-            <label htmlFor='debts'>
-              <h3>Debts</h3>
+          <fieldset className='description'>
+            <label htmlFor='description'>
+              <h3>Description</h3>
             </label>
-            <input placeholder='$0' type='number' name='debts' />
             <textarea
-              placeholder='Type of debt'
-              name='debts'
+              placeholder='Describe your transaction'
+              name='description'
             ></textarea>
           </fieldset>
           <button className='input-button' type='submit'>

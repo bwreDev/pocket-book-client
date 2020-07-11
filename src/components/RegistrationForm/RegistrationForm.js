@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-//import AuthApiService from '../../services/auth-api-service';
+import AuthApiService from '../../services/auth-api-service';
 import Navbar from '../../components/Navbar/Navbar';
 import './RegistrationForm.css';
 
 export default class RegistrationForm extends Component {
-  /*
   static defaultProps = {
     onRegistrationSuccess: () => {},
   };
@@ -13,14 +12,14 @@ export default class RegistrationForm extends Component {
     error: null,
   };
 
-  handleSubmit = (event) => {
-    event.preventDefault();
+  handleSubmit = (input) => {
+    input.prinputDefault();
     const {
       first_name,
       last_name,
       username,
       password,
-    } = event.target;
+    } = input.target;
 
     this.setState({ error: null });
     AuthApiService.postUser({
@@ -41,7 +40,6 @@ export default class RegistrationForm extends Component {
         this.setState({ error: res.error });
       });
   };
-  */
 
   render() {
     return (

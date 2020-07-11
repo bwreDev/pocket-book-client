@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-//import TokenService from '../../services/token-services';
-//import IdleService from '../../services/idle-service';
+import TokenService from '../../services/token-services';
+import IdleService from '../../services/idle-service';
 import './Navbar.css';
 
 export default class Navbar extends Component {
-  /*
   state = {
     user: null,
   };
@@ -41,12 +40,11 @@ export default class Navbar extends Component {
           <Link to='/register'>Register</Link>
         </li>
         <li>
-          <Link to='/login'>Log in</Link>
+          <Link to='/login'>Login</Link>
         </li>
       </>
     );
   }
-  */
 
   render() {
     return (
@@ -55,23 +53,9 @@ export default class Navbar extends Component {
           <li>
             <Link to='/'>Home</Link>
           </li>
-          <li>
-            <Link to='/login'>Login</Link>
-          </li>
-          <li>
-            <Link to='/register'>Register</Link>
-          </li>
-          <li>
-            <Link to='/user'>Profile</Link>
-          </li>
-          <li>
-            <Link to='/input'>Input</Link>
-          </li>
-          {/*
-          TokenService.hasAuthToken()
+          {TokenService.hasAuthToken()
             ? this.renderLogoutLink()
-          : this.renderLoginLink()
-          */}
+            : this.renderLoginLink()}
         </ul>
       </nav>
     );
