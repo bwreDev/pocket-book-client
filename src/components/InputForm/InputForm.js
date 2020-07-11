@@ -17,31 +17,25 @@ export default class InputForm extends Component {
     });
   };
 
-  handleSubmit = (input) => {
-    input.preventDefault();
+  handleSubmit = (event) => {
+    event.preventDefault();
 
-    let inputObject = {
+    let eventObject = {
       title: this.state.input_type,
     };
 
-    if (inputObject.title === 'income') {
-      inputObject.content =
-        input.target.income.value +
-        ' ' +
-        input.target.amount.value +
-        ' ' +
-        input.target.description.value;
+    if (eventObject.title === 'income') {
+      eventObject.content = event.target.description.value;
+
+      eventObject.amount = event.target.amount.value;
     }
-    if (inputObject.title === 'debt') {
-      inputObject.content =
-        input.target.debt.value +
-        ' ' +
-        input.target.amount.value +
-        ' ' +
-        input.target.description.value;
+    if (eventObject.title === 'debt') {
+      eventObject.content = event.target.description.value;
+
+      eventObject.amount = event.target.amount.value;
     }
 
-    PocketBookApiService.postInput(inputObject)
+    PocketBookApiService.postInput(eventObject)
       .then(this.context.addInput)
       .then(this.props.history.push('/user'))
       .catch(this.context.setError);
@@ -56,8 +50,8 @@ export default class InputForm extends Component {
           <h3>Type</h3>
           <select onChange={this.onChange} name='input_type'>
             <option value=''></option>
-            <option value='incomes'>Incomes</option>
-            <option value='debts'>Debts</option>
+            <option value='income'>Incomes</option>
+            <option value='debt'>Debts</option>
           </select>
           <fieldset className='amount'>
             <label htmlFor='amount'>

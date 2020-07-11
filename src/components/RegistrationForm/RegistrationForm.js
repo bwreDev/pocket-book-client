@@ -12,14 +12,14 @@ export default class RegistrationForm extends Component {
     error: null,
   };
 
-  handleSubmit = (input) => {
-    input.prinputDefault();
+  handleSubmit = (event) => {
+    event.preventDefault();
     const {
       first_name,
       last_name,
       username,
       password,
-    } = input.target;
+    } = event.target;
 
     this.setState({ error: null });
     AuthApiService.postUser({
