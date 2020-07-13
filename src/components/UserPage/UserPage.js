@@ -25,6 +25,28 @@ export default class UserPage extends Component {
     });
   };
 
+  getTotal = (inputs) => {
+    let total = 0;
+    for (let i = 0; i < inputs.length; i++) {
+      total = total + parseFloat(inputs[i].amount);
+    }
+    return total;
+  };
+
+  getSavings = (inputs) => {
+    let savings = 0;
+    for (let i = 0; i < inputs.length; i++) {
+      if (inputs[i].title === 'income') {
+        savings += parseFloat(inputs[i].amount);
+      }
+      if (inputs[i].title === 'debt') {
+        savings -= parseFloat(inputs[i].amount);
+      }
+    }
+
+    return savings;
+  };
+
   render() {
     return (
       <>
@@ -34,7 +56,7 @@ export default class UserPage extends Component {
           <h2>Welcome Back!</h2>
         </header>
         <section className='income-section'>
-          <h3>Income</h3>
+          <h3>Incomes</h3>
           <ul>
             {this.context.inputs
               .filter((i) => i.title === 'income')
@@ -50,6 +72,12 @@ export default class UserPage extends Component {
                 </li>
               ))}
           </ul>
+          <h3>
+            Total income: $
+            {this.getTotal(
+              this.context.inputs.filter((i) => i.title === 'income')
+            )}
+          </h3>
         </section>
         <section className='debt-section'>
           <h3>Debts</h3>
@@ -68,12 +96,15 @@ export default class UserPage extends Component {
                 </li>
               ))}
           </ul>
+          <h3>
+            Total debt: $
+            {this.getTotal(
+              this.context.inputs.filter((i) => i.title === 'debt')
+            )}
+          </h3>
         </section>
         <section className='savings-section'>
-          <h3>Savings</h3>
-          <span>
-            Placeholder for you remaining income after debts.
-          </span>
+          <h3>Savings: $ {this.getSavings(this.context.inputs)}</h3>
         </section>
       </>
     );

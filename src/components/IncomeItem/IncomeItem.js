@@ -10,7 +10,8 @@ export default function IncomeItem(props) {
   return (
     <>
       <h4 className='income-item'>{props.input.title}</h4>
-      <h4 className='income-amount'>{props.input.amount}</h4>
+      <p className='income-amount'>${props.input.amount}</p>
+      <p className='income-description'> - {props.input.content}</p>
       <span className='income-post-time'>
         {props.input.date_added ? cleanDate : ''}
       </span>
