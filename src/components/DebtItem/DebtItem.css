@@ -1,0 +1,17 @@
+.debt-item {
+  text-transform: capitalize;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.debt-amount,
+.debt-description {
+  margin: 0;
+}
+
+.debt-post-time {
+  font-size: smaller;
+}

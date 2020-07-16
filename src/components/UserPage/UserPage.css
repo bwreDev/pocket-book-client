@@ -1,0 +1,72 @@
+.delete_debt,
+.delete_income {
+  background-color: #225a2a;
+  border-radius: 50%;
+  padding: 5px;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  width: 25px;
+  margin: 5px;
+}
+
+.delete_debt:hover,
+.delete_income:hover {
+  color: red;
+  cursor: pointer;
+}
+
+h3 {
+  text-decoration: underline;
+}
+
+.income-section {
+  background-color: rgba(97, 223, 66, 0.7);
+  margin: 5px;
+  border-radius: 15px;
+}
+
+.debt-section {
+  background-color: rgba(236, 71, 71, 0.7);
+  margin: 5px;
+  border-radius: 15px;
+}
+
+.savings-section {
+  background-color: rgba(129, 176, 224, 0.747);
+  margin: 5px;
+  border-radius: 15px;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media only screen and (min-width: 600px) {
+  .income-section {
+    display: inline-flex;
+    flex-direction: column;
+    font-size: 20px;
+    margin: 15px;
+    padding: 15px;
+  }
+
+  .debt-section {
+    display: inline-flex;
+    flex-direction: column;
+    font-size: 20px;
+    margin: 15px;
+    padding: 15px;
+  }
+
+  .savings-section {
+    display: inline-flex;
+    flex-direction: column;
+    font-size: 20px;
+    margin: 15px;
+    padding: 15px;
+  }
+}

@@ -43,7 +43,6 @@ export default class UserPage extends Component {
         savings -= parseFloat(inputs[i].amount);
       }
     }
-
     return savings;
   };
 
@@ -64,7 +63,7 @@ export default class UserPage extends Component {
                 <li key={i.id}>
                   <IncomeItem input={i} />
                   <button
-                    className='delete_incomes'
+                    className='delete_income'
                     onClick={() => this.handleDelete(i.id)}
                   >
                     X
@@ -88,7 +87,7 @@ export default class UserPage extends Component {
                 <li key={i.id}>
                   <DebtItem input={i} />
                   <button
-                    className='delete_debts'
+                    className='delete_debt'
                     onClick={() => this.handleDelete(i.id)}
                   >
                     X

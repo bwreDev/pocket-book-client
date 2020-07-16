@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the UI as expected 1`] = `
+Array [
+  <p
+    className="debt-amount"
+  >
+    $
+  </p>,
+  <p
+    className="debt-description"
+  >
+     - 
+  </p>,
+  <span
+    className="debt-post-time"
+  >
+    
+  </span>,
+]
+`;

@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the UI as expected 1`] = `
+Array [
+  <nav
+    className="navbar"
+    role="navigation"
+  >
+    <ul
+      className="navbar-list"
+    >
+      <li>
+        <a
+          href="/"
+          onClick={[Function]}
+        >
+          Home
+        </a>
+      </li>
+      <li>
+        <a
+          href="/register"
+          onClick={[Function]}
+        >
+          Register
+        </a>
+      </li>
+      <li>
+        <a
+          href="/login"
+          onClick={[Function]}
+        >
+          Login
+        </a>
+      </li>
+    </ul>
+  </nav>,
+  <header
+    role="banner"
+  >
+    <h1>
+      Pocket Book!
+    </h1>
+    <h2>
+      Welcome Back!
+    </h2>
+  </header>,
+  <section
+    className="income-section"
+  >
+    <h3>
+      Incomes
+    </h3>
+    <ul />
+    <h3>
+      Total income: $
+      0
+    </h3>
+  </section>,
+  <section
+    className="debt-section"
+  >
+    <h3>
+      Debts
+    </h3>
+    <ul />
+    <h3>
+      Total debt: $
+      0
+    </h3>
+  </section>,
+  <section
+    className="savings-section"
+  >
+    <h3>
+      Savings: $ 
+      0
+    </h3>
+  </section>,
+]
+`;

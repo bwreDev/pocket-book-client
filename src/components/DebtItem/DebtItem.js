@@ -8,14 +8,13 @@ export default function DebtItem(props) {
   );
 
   return (
-    <>
-      <h4 className='debt-item'>{props.input.title}</h4>
+    <div className='debt-item'>
       <p className='debt-amount'>${props.input.amount}</p>
-      <p className='debt-description'> - {props.input.content}</p>
+      <p className='debt-description'>{props.input.content}</p>
       <span className='debt-post-time'>
         {props.input.date_added ? cleanDate : ''}
       </span>
-    </>
+    </div>
   );
 }
 

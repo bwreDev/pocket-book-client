@@ -1,0 +1,17 @@
+.income-item {
+  text-transform: capitalize;
+  margin-bottom: 0;
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.income-amount,
+.income-description {
+  margin: 0;
+}
+
+.income-post-time {
+  font-size: smaller;
+}

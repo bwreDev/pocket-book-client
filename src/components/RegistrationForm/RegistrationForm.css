@@ -1,0 +1,57 @@
+.registration-button {
+  background-color: #225a2a;
+  color: white;
+  border-radius: 15px;
+  padding: 20px;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px;
+  width: 250px;
+}
+
+.registration-button:hover {
+  background-color: lightgreen;
+  color: #303030;
+  cursor: pointer;
+}
+
+.RegistrationForm fieldset {
+  border-style: none;
+}
+
+.RegistrationForm input {
+  height: 40px;
+  border-radius: 15px;
+  border-style: none;
+  margin: 5px;
+  background-color: lightgreen;
+}
+
+@media only screen and (min-width: 600px) {
+  .RegistrationForm input {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: 60px;
+    font-size: 20px;
+  }
+
+  .RegistrationForm fieldset {
+    height: 500px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .RegistrationForm input {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    height: 80px;
+    font-size: 24px;
+  }
+
+  .RegistrationForm fieldset {
+    height: 750px;
+  }
+}

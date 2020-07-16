@@ -59,6 +59,7 @@ export default class LoginForm extends Component {
               type='password'
               placeholder='Password'
               id='LoginForm__password'
+              required
             />
           </fieldset>
           <button className='login-button' type='submit'>
