@@ -1,3 +1,17 @@
+## Pocket Book!
+
+This is a React client app for my full stack capstone project.
+
+This is for users who want a simplified version of a finance app without the complex nature
+of some of the popular ones already out there.
+
+I wanted this to be a simple in out structure for the time being to get a broad strokes idea of how
+my personal finances work.
+
+Please visit the live site at [https://pocket-book-client.vercel.app/](https://pocket-book-client.vercel.app/)
+![splash-page](PocketBookSplash.png)
+![user-page](PBUser.png)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
